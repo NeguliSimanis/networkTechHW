@@ -2,6 +2,11 @@
 
 return [
 
+    // Upload rules
+    'allowedFileTypes' => 'xml',
+    'maxFileSize' => 1000, // 1MB
+    'fileDestinationPath' => 'uploads',
+    
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -13,7 +18,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Game Save File Sharing System'),
 
     /*
     |--------------------------------------------------------------------------
@@ -225,6 +230,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+		'Input' => Illuminate\Support\Facades\Input::class,
 
     ],
 
