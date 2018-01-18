@@ -17,6 +17,8 @@ Route::get('register','RegisterController@register');
 Route::get('login','LoginController@login');
 Route::get('upload','UploadController@upload');
 
+Route::get('glogin',array('as'=>'glogin','uses'=>'UserController@googleLogin')) ;
+Route::get('google-user',array('as'=>'user.glist','uses'=>'UserController@listGoogleUser'));
 
 Route::resource('post', 'PostController');
 
