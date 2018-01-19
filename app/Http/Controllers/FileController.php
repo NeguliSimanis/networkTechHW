@@ -8,7 +8,7 @@ use File;
 use Storage;
 use App\UploadedFile;
 
-class UploadController extends Controller
+class FileController extends Controller
 {
     public function show() {
         $directory = config('app.fileDestinationPath');
@@ -30,15 +30,25 @@ class UploadController extends Controller
         $destinationPath = config('app.fileDestinationPath').'/'.$fileName;
         $uploaded = Storage::put($destinationPath, file_get_contents($file->getRealPath()));
         
-        //store file in database
+        
         if ($uploaded){
+            //store file in database
             UploadedFile::create([
                'filename' => $fileName
             ]);
-        }
-        
-        return redirect()->to('upload');
+            
+            // notification
+            $notification = array (
+                'message' => 'File uploaded successfully!',
+                'alert-type' => 'success'
+            );
+            return back()->with($notification);
+        }       
+
+        redirect()->to('upload');
     }
     
-    
+    public function download(){
+        
+    }
 }

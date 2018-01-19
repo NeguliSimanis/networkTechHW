@@ -22,8 +22,11 @@ Route::get('glogin',array('as'=>'glogin','uses'=>'UserController@googleLogin')) 
 Route::get('google-user',array('as'=>'user.glist','uses'=>'UserController@listGoogleUser'));
 
 //Uploading save files
-Route::get('upload','UploadController@show');
-Route::post('upload/complete','UploadController@upload');
+Route::get('upload','FileController@show');
+Route::post('upload/complete','FileController@upload');
+
+//Download save files
+Route::get('download','FileController@download');
 
 //localization
 Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);

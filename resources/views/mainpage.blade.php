@@ -9,7 +9,9 @@
             <div class="startpanel center">
                 <table id="file-table">
                     <!-- Header row -->
-                    <tr><th>Save File</th><th></th></tr>
+                    <tr>
+                        <th>Save File</th><th></th>
+                    </tr>
                     
                     <!-- Data -->
                     @foreach ($files as $file)
