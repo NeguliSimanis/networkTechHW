@@ -44,3 +44,18 @@
 .welcome {
     float:left;
 }
+
+.startpanel {
+    width: 80%;
+    padding-top: 50px;
+}
+
+.startbutton {
+    padding-top: 10px;
+    width: 50%;
+    height: 50px;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    vertical-align: middle;
+}
