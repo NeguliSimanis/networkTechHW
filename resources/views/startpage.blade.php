@@ -7,10 +7,10 @@
             
             <div class="startpanel center">
                <!--  <div class="startbutton center"> -->
-                    <a class="btn btn-danger startbutton" href="{{ route('glogin') }}"> Register</a>
+                    <a class="btn btn-danger startbutton" href="{{ url('register') }}"> Register</a>
                <!--  </div>
                 <div class="startbutton center">-->
-                    <a class="btn btn-danger startbutton" href="{{ route('glogin') }}"> Login</a>
+                    <a class="btn btn-danger startbutton" href="{{ url('login') }}"> Login</a>
                <!--  </div>
                 <div class="startbutton center">-->
                     <a class="btn btn-danger startbutton" href="{{ route('glogin') }}"> Login with Google</a>

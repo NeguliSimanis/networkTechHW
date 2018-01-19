@@ -46,6 +46,8 @@ class FileController extends Controller
         }       
 
         redirect()->to('upload');
+        
+        
     }
     
     public function download(){

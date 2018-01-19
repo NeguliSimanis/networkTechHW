@@ -32,9 +32,9 @@
                     <div class=" language">
                         
                             
-                        <a href="{{ route('lang.switch', 'en') }}" class="btn "><img width="42" src='images/en.png'></a>
+                        <a href="{{ URL::to('welcome/en') }}" class="btn "><img width="42" src='images/en.png'></a>
                         
-                        <a href="{{ route('lang.switch', 'lv') }}"class="btn "><img width="42" src='images/lv.png'></a>
+                        <a href="{{ URL::to('welcome/lv') }}"class="btn "><img width="42" src='images/lv.png'></a>
                     </div>
                     <div class="navbar-brand">
                         
