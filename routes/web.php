@@ -11,11 +11,6 @@
 |
 */
 
-// main pages
-Route::get('/', 'StartPageController@welcome');
-Route::get('welcome/{lang?}', 'StartPageController@welcome');
-Route::get('main','MainController@mainpage');
-
 
 Auth::routes();
 
@@ -35,6 +30,9 @@ Route::post('upload/complete','FileController@upload');
 //Download save files
 Route::get('download','FileController@download');
 
+Route::get('welcome/{lang?}', 'StartPageController@welcome');
+Route::get('main','MainController@mainpage')->name('main');
+Route::get('/', 'StartPageController@welcome');
 
 //localization
 //Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);

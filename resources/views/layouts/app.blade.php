@@ -25,7 +25,10 @@
             <div class="container">
                 <div style='width:100%'>       
                     <div class="navbar-brand welcome">
-                        <p>{{__('webContent.welcomeUser') }} John Doe!</p>
+                        
+                        @if (Auth::User())
+                            <p> {{__('webContent.welcomeUser') }}! {{Auth::User()->name}} </p>
+                        @endif
                     </div>
                     
                     <!-- Language selection -->
