@@ -18,19 +18,26 @@
 </head>
 <body>
     <div id="app">
+        
+        <!-- Header for all pages -->
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
-                <div class="navbar-header">
-
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                   
+                <div style='width:100%'>       
+                    <div class="navbar-brand welcome">
+                        <p>{{__('webContent.welcomeUser') }} John Doe!</p>
+                    </div>
+                    
+                    <!-- Language selection -->
+                    <div class=" language">
+                        
+                            
+                        <a href="{{ route('lang.switch', 'en') }}" class="btn "><img width="42" src='images/en.png'></a>
+                        
+                        <a href="{{ route('lang.switch', 'lv') }}"class="btn "><img width="42" src='images/lv.png'></a>
+                    </div>
+                    <div class="navbar-brand">
+                        
+                    </div>
                 </div>
             </div>
         </nav>

@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'StartPageController@welcome');
+Route::get('welcome/{lang?}', 'StartPageController@welcome');
 Route::get('main','MainController@mainpage');
 Route::get('register','RegisterController@register');
 Route::get('login','LoginController@login');
@@ -23,6 +24,9 @@ Route::get('google-user',array('as'=>'user.glist','uses'=>'UserController@listGo
 //Uploading save files
 Route::get('upload','UploadController@show');
 Route::post('upload/complete','UploadController@upload');
+
+//localization
+Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);
 
 //Validation according to https://laravel.com/docs/5.5/validation#quick-defining-the-routes
 

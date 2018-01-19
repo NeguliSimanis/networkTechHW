@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use Input;
 use File;
 use Storage;
+use App\UploadedFile;
 
 class UploadController extends Controller
 {
     public function show() {
         $directory = config('app.fileDestinationPath');
-        $files = Storage::files($directory);
+        //$files = Storage::files($directory);
+        $files = UploadedFile::all();
         return view ('upload')->with(array('files' => $files));
     }
     
@@ -27,6 +29,13 @@ class UploadController extends Controller
         $fileName = $file->getClientOriginalName();
         $destinationPath = config('app.fileDestinationPath').'/'.$fileName;
         $uploaded = Storage::put($destinationPath, file_get_contents($file->getRealPath()));
+        
+        //store file in database
+        if ($uploaded){
+            UploadedFile::create([
+               'filename' => $fileName
+            ]);
+        }
         
         return redirect()->to('upload');
     }
