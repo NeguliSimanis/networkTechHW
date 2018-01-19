@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container center">
         <body>
-            <h1>Save File Upload</h1>
+            <h1 class="center">Save File Upload</h1>
             
             <!-- Display upload errors -->
             @if(count($errors))
@@ -14,17 +14,17 @@
             @endif
             
             <!-- Display uploaded file -->
-            <ul>
+            <!--<ul>
                 @foreach ($files as $file)
                     <li>{{ $file }}</li>
                 @endforeach
-            </ul>
+            </ul>-->
             
             <!-- Upload form -->
-            <form action="{{ URL::to('upload/complete') }}" method="post" enctype="multipart/form-data">
+            <form class="center" action="{{ URL::to('upload/complete') }}" method="post" enctype="multipart/form-data">
                     <label>Select xml file to upload:</label>
-                <input type="file" name="file" id="file">
-                <input type="submit" value="Upload" name="submit">
+                <input type="file" name="file" id="file" class="center">
+                <input type="submit" value="Upload" name="submit" class="center">
                     <input type="hidden" value="{{ csrf_token() }}" name="_token">
             </form>
         </body>

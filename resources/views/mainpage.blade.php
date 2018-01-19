@@ -8,8 +8,15 @@
             <!-- Table with uploaded files -->
             <div class="startpanel center">
                 <table id="file-table">
+                    <!-- Header row -->
+                    <tr><th>Save File</th><th></th></tr>
+                    
+                    <!-- Data -->
                     @foreach ($files as $file)
-                        <tr>{{ $file }}</tr>
+                    <tr>
+                        <th>{{ $file }}</th>
+                        <th><button>Download</button></th>
+                    </tr>
                     @endforeach
                 </table>
             </div>
