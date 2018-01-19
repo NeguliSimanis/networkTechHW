@@ -10,13 +10,20 @@
                 <table id="file-table">
                     <!-- Header row -->
                     <tr>
-                        <th>Save File</th><th></th>
+                        <th>Save File</th>
+                        <th>Upload Date</th>
+                        <th>Uploaded by</th>
+                        <th>Resources</th>
+                        <th></th>
                     </tr>
                     
                     <!-- Data -->
                     @foreach ($files as $file)
                     <tr>
-                        <th>{{ $file }}</th>
+                        <th>{{ $file->filename }}</th>
+                        <th>{{ $file->created_at }}</th>
+                        <th></th>
+                        <th>Ducats</th>
                         <th><button>Download</button></th>
                     </tr>
                     @endforeach

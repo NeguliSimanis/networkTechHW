@@ -69,6 +69,8 @@
 }
 
 #file-table {
+    width:100%;
+    margin: auto;
     font-weight: normal;
     margin-bottom: 20px;
 }
