@@ -16,14 +16,14 @@ Route::get('/', 'StartPageController@welcome');
 Route::get('welcome/{lang?}', 'StartPageController@welcome');
 Route::get('main','MainController@mainpage');
 
-//Route::get('register','RegisterController@register');
-//Route::get('register', 'Auth\RegisterController@register');
-//Route::post('registration',array('as'=>'registration','uses'=>'Auth\RegisterController@__construct'));
-        //, 'Auth\RegisterController@test');
-//Route::get('login','LoginController@login');
 
 Auth::routes();
-        
+
+//admin login
+Route::get('/admin/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
+Route::post('/admin/login','Auth\AdminLoginController@login')->name('admin.login.submit');       
+Route::get('/admin','AdminController@index');
+
 // google login
 Route::get('glogin',array('as'=>'glogin','uses'=>'UserController@googleLogin')) ;
 Route::get('google-user',array('as'=>'user.glist','uses'=>'UserController@listGoogleUser'));
@@ -35,13 +35,9 @@ Route::post('upload/complete','FileController@upload');
 //Download save files
 Route::get('download','FileController@download');
 
-// admin
-Route::get('/admin','AdminController@index');
 
 //localization
 //Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);
-
-
 
 //not used yet
 Route::resource('post', 'PostController');
